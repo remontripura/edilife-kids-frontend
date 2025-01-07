@@ -1,6 +1,6 @@
 "use server";
 
-import { cookies } from "next/headers";
+// import { cookies } from "next/headers";
 
 type ApiErrorMessage = {
   path: string;
@@ -14,7 +14,7 @@ type IProps = {
 
 type ApiResponse = {
   success: boolean;
-  data?: any;
+  data?: object;
   message?: string;
   errorMessages?: ApiErrorMessage[];
 };
@@ -23,7 +23,7 @@ export const postData = async ({
   data,
   postUrl,
 }: IProps): Promise<ApiResponse> => {
-  const cookieStore = cookies();
+  // const cookieStore = cookies();
   //   const token = cookieStore.get("gameToken")?.value;
 
   try {

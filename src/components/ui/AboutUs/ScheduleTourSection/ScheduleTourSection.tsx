@@ -13,6 +13,7 @@ import FormInputField from "@/components/form/FormInputField";
 import { useMutation } from "@tanstack/react-query";
 import { postData } from "@/utils/actions/postAction";
 import LoadingButton from "@/components/shared/LoadingButton/LoadingButton";
+import FormSelectField from "@/components/form/FormSelectFieldField";
 
 export const validationSchema = z.object({
   name: z.string().min(1, "This field is required."),
@@ -24,11 +25,11 @@ export const validationSchema = z.object({
 });
 
 const ScheduleTourSection = () => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const {
-    register,
-    handleSubmit,
-    formState: { errors },
+    // register,
+    // handleSubmit,
+    // formState: { errors },
     reset,
   } = useForm();
 
@@ -43,7 +44,7 @@ const ScheduleTourSection = () => {
       console.log(response);
       return response;
     },
-    onSuccess: (data: any) => {
+    onSuccess: (data: { success: boolean; message?: string }) => {
       if (data?.success == true) {
         Swal.fire({
           text: "Student Create Successfully",
@@ -59,14 +60,14 @@ const ScheduleTourSection = () => {
   const formSubmit: SubmitHandler<FieldValues> = async (data) => {
     mutate(data);
     return;
-    setLoading(true);
+    // setLoading(true);
     try {
       const response = await fetch(
         `http://admin.edulifekids.com/api/create-visitor`,
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json",  
           },
           body: JSON.stringify(data),
         }
@@ -79,7 +80,7 @@ const ScheduleTourSection = () => {
           draggable: true,
         });
         reset();
-        setLoading(false);
+        // setLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -87,7 +88,14 @@ const ScheduleTourSection = () => {
   };
 
   // Dynamic class options
-  const classOptions = ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5"];
+  const classOptions = [
+    { label: 'Class 1', value: 'Class 1' },
+    { label: 'Class 2', value: 'Class 2' },
+    { label: 'Class 3', value: 'Class 3' },
+    { label: 'Class 4', value: 'Class 4' },
+    { label: 'Class 5', value: 'Class 5' },
+  ];
+  
 
   return (
     <div id="admission">
@@ -176,6 +184,16 @@ const ScheduleTourSection = () => {
                     className="px-3 bg-transperant"
                     placeholder="Enter Kids Age"
                     star={true}
+                  />
+                  
+                </div>
+                
+                <div className="mt-5">
+                <FormSelectField
+                placeholder="Enter student class"
+                  name="Student_class"
+                  options={classOptions}
+                  defaultValue={0}
                   />
                 </div>
                 {/* <button className="bg-primary bg-[#FF9C00] text-[#fff] px-8 text-base lg:text-lg font-medium py-[5px] rounded-md mt-3">

@@ -3,7 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { images, menuItems } from "@/components/store";
 
-const Responsive = ({ handleToggle, toggle } : any) => {
+
+interface ResponsiveProps{
+  handleToggle: () => void; 
+  toggle: boolean; 
+
+}
+const Responsive = ({ handleToggle, toggle } : ResponsiveProps) => {
   return (
     <div className={`md:hidden block py-2 bg`}>
       <div className="flex justify-between items-center px-4 relative">

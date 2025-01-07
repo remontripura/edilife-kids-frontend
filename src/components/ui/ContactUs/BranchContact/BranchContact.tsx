@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import { FaClock, FaMapMarkerAlt } from "react-icons/fa";
+// import { FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 
 import { FiClock, FiMail } from "react-icons/fi";

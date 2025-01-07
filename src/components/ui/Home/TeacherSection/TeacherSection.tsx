@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 

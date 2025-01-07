@@ -5,10 +5,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const FAQsection = () => {
-  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleFAQ = (index: any) => {
+
+
+const FAQsection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 

@@ -58,12 +58,12 @@
 
 "use client";
 import MainContainer from "@/components/shared/Container/MainContainer";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 const VideoSection = () => {
-  const [showVideo, setShowVideo] = useState(false);
-  const handlePlayClick = () => {
-    setShowVideo(true);
-  };
+  // const [showVideo, setShowVideo] = useState(false);
+  // const handlePlayClick = () => {
+  //   setShowVideo(true);
+  // };
 
   return (
     <MainContainer>

@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import MainContainer from "@/components/shared/Container/MainContainer";
 import { images } from "@/components/store";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styles from "@/Styles/Carousel.module.css";
 
-type ImageType = any;
+type ImageType = StaticImageData;
 
 const imagesA: ImageType[] = [
   images.ajkerpotrika,

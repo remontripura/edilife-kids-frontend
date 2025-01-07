@@ -4,7 +4,7 @@ import { images } from "@/components/store";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
+// import { FaArrowRight } from "react-icons/fa6";
 
 const KidsProgramSection = () => {
   return (

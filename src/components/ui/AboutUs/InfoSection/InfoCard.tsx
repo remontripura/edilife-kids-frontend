@@ -1,14 +1,26 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
-const InfoCard = ({ title, description, link, className, icons }: any) => {
+interface InfoCardProps {
+  title: string; 
+  description: string; 
+  link: string; 
+  className?: string;
+  icons: {
+    src: StaticImageData; 
+    alt: string; 
+  }[]; 
+}
+
+
+const InfoCard = ({ title, description, link, className, icons }: InfoCardProps) => {
   return (
     <div
       className={`flex flex-col items-start p-6 rounded-lg  w-full md:mx-4 mb-8 md:mb-0 ${className}`}
     >
       <div className="flex justify-between w-full mb-8">
-        {icons.map((icon: any, index: number) => (
+        {icons.map((icon, index) => (
           <Image
             key={index}
             src={icon.src}

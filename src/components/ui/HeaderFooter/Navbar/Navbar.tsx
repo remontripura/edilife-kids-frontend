@@ -11,6 +11,7 @@ import Responsive from "./Responsive";
 const Navbar = () => {
   const pathname = usePathname();
   const [toggle, setToggle] = useState(false);
+  
   const handleToggle = () => {
     setToggle(!toggle);
   };

@@ -1,7 +1,7 @@
 import MainContainer from "@/components/shared/Container/MainContainer";
 import { images } from "@/components/store";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 type IProps = {
   title: string;
@@ -33,7 +33,7 @@ const Banner = ({ title, firstPoint, secondPoint }: IProps) => {
               {firstPoint}
             </li>
             <div className="bg-[#9E9E9E] h-5 w-[1px]"></div>
-            <li className="text-base md:text-lg m-2 tracking-wide text-center text-primary text-blue-700">
+            <li className="text-base md:text-lg m-2 tracking-wide text-center text-primary hover:text-blue-700">
               {secondPoint}
             </li>
           </ul>

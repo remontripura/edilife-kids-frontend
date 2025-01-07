@@ -1,7 +1,21 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
+import { IconType } from "react-icons";
 
-const TeacherCard = ({ image, name, title, social, bg }: any) => {
+interface Social {
+  icon: IconType;
+  alt: string;
+  link: string;
+}
+
+export interface TeacherCardProps {
+  image: StaticImageData;
+  name: string;
+  title: string;
+  bg: string;
+  social: Social[];
+}
+const TeacherCard = ({ image, name, title, social, bg }: TeacherCardProps) => {
   return (
     <div
       className="text-black p-5 my-3 rounded-tr-3xl w-full md:w-[300px] rounded-bl-3xl transition-all duration-700"
@@ -20,7 +34,7 @@ const TeacherCard = ({ image, name, title, social, bg }: any) => {
         </h3>
         <p className="text-sm md:text-base text-[#787676] mb-4">{title}</p>
         <div className="flex space-x-4">
-          {social.map(({ icon: Icon, link, alt }: any, index: number) => (
+          {social.map(({ icon: Icon, link, alt }, index: number) => (
             <a
               key={index}
               href={link}

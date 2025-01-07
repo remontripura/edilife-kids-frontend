@@ -15,6 +15,7 @@ const GetInformationSection = () => {
   const [selectedBranch, setSelectedBranch] = useState("Khagrachari Branch");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+
   const mapUrls = {
     "Khagrachari Branch":
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428.2716554984911!2d91.9793666120647!3d23.10877176527565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3752e5f392c142c1%3A0x3d99e727c3514ab6!2z4KaP4Kam4KeB4Kay4Ka-4KaH4KarIOCmh-CmnyDgpofgpqjgprjgp43gpp_gpr_gpp_gpr_gpongpp8!5e0!3m2!1sbn!2sbd!4v1727587057194!5m2!1sbn!2sbd",
@@ -28,11 +29,16 @@ const GetInformationSection = () => {
     console.log(data);
   };
 
-  const agentOption = [
-    { label: "Khagrachari Brance", value: "1" },
-    { label: "Matiranga Brance", value: "2" },
-    { label: "Luxmichari Brance", value: "3" },
+  const BranchOption = [
+    { label: "Khagrachari Branch", value: "Khagrachari Branch" },
+    { label: "Matiranga Branch", value: "Matiranga Branch" },
+    { label: "Laxmichari Branch", value: "Laxmichari Branch" },
   ];
+
+  const handleBranchChange = (value: string) => {
+    setSelectedBranch(value);
+  };
+
   return (
     <div>
       <MainContainer>
@@ -60,7 +66,8 @@ const GetInformationSection = () => {
                     <FormSelectField
                       name="adminId"
                       className="bg-transperant"
-                      options={agentOption}
+                      options={BranchOption}
+                      onChange={handleBranchChange}
                       type="string"
                       defaultValue={0}
                     />
@@ -118,9 +125,7 @@ const GetInformationSection = () => {
             {/* Right side: Google Map */}
             <div className="w-full lg:w-[55%]">
               <iframe
-                src={
-                  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428.2716554984911!2d91.9793666120647!3d23.10877176527565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3752e5f392c142c1%3A0x3d99e727c3514ab6!2z4KaP4Kam4KeB4Kay4Ka-4KaH4KarIOCmh-CmnyDgpofgpqjgprjgp43gpp_gpr_gpp_gpr_gpongpp8!5e0!3m2!1sbn!2sbd!4v1727587057194!5m2!1sbn!2sbd"
-                }
+                src={mapUrls[selectedBranch as keyof typeof mapUrls]}
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

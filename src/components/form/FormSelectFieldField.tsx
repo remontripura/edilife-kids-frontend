@@ -14,6 +14,8 @@ const FormSelectField = ({
   onChange,
   defaultValue = 1,
 }: TSelectProps) => {
+
+  
   const { control } = useFormContext();
   const [selectedOption, setSelectedOption] = useState<TOption | null>(
     options && options.length > 0 && defaultValue !== null

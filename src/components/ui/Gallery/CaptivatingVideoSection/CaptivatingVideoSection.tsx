@@ -1,15 +1,22 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import { Play } from "lucide-react";
 import MainContainer from "@/components/shared/Container/MainContainer";
 import { images } from "@/components/store";
+import { StaticImageData } from "next/image";
 // import Image from 'next/image'
 
 export default function CaptivatingVideoSection() {
-  // const [activeVideo, setActiveVideo] = useState(null)
+  // const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  type Video = {
+    id: string;
+    src: string;
+    poster: StaticImageData;
+  };
+  
 
-  const videos = [
+  const videos :Video[] = [
     {
       id: "video1",
       src: "https://www.youtube.com/embed/UWD4i4L4DzA?si=mSFfF7rTTzABIe5u&amp;controls=0",
@@ -27,9 +34,9 @@ export default function CaptivatingVideoSection() {
     },
   ];
 
-  const handlePlayVideo = (videoId: any) => {
-    // setActiveVideo(videoId);
-  };
+  // const handlePlayVideo = (videoId: any) => {
+  //   setActiveVideo(videoId);
+  // };
 
   return (
     <div className="bg-white py-8">
@@ -67,7 +74,7 @@ export default function CaptivatingVideoSection() {
                     /> */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <button
-                      onClick={() => handlePlayVideo("video1")}
+                      // onClick={() => handlePlayVideo("video1")}
                       className="text-white bg-black bg-opacity-50 rounded-full p-4 transition-opacity hover:bg-opacity-75"
                       aria-label="Play video 1"
                     >
@@ -100,7 +107,7 @@ export default function CaptivatingVideoSection() {
                     /> */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <button
-                      onClick={() => handlePlayVideo("video2")}
+                      // onClick={() => handlePlayVideo("video2")}
                       className="text-white bg-black bg-opacity-50 rounded-full p-3 transition-opacity hover:bg-opacity-75"
                       aria-label="Play video 2"
                     >
@@ -130,7 +137,7 @@ export default function CaptivatingVideoSection() {
                     /> */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <button
-                      onClick={() => handlePlayVideo("video3")}
+                      // onClick={() => handlePlayVideo("video3")}
                       className="text-white bg-black bg-opacity-50 rounded-full p-3 transition-opacity hover:bg-opacity-75"
                       aria-label="Play video 3"
                     >

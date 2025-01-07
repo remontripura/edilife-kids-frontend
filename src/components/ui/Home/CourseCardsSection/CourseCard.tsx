@@ -1,8 +1,15 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
 
-const CourseCard = ({ id, title, description, imageSrc }: any) => {
+interface CourseCardProps {
+  id:string,
+  title:string,
+  description:string,
+  imageSrc :StaticImageData
+}
+
+const CourseCard = ({ id, title, description, imageSrc }: CourseCardProps ) => {
 
   return (
     <Link href={`/courses/${id}`} className="block">
