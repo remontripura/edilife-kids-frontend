@@ -1,0 +1,32 @@
+
+/* ----------- Carousouse css */
+@keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .marquee {
+    white-space: nowrap;
+  }
+  
+  .marqueeContent {
+    display: inline-block;
+    animation: marquee 60s linear infinite;
+  }
+  
+  .paused .marqueeContent {
+    animation-play-state: paused;
+  }
+  
+  @media (min-width: 768px) {
+    .marqueeContent {
+      animation-duration: 80s;
+    }
+  }
+  
+  /* ----------- Carousouse css */
+  
