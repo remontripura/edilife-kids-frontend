@@ -65,11 +65,14 @@ const TeacherSection = () => {
       <MainContainer>
         <section className="py-6 md:py-12">
           <div className="flex flex-col md:flex-row items-end justify-center md:justify-between px-5">
-            <div className=" text-center md:text-left mb-6 md:mb-0">
-              <h2 className="text-2xl md:text-3xl lg:text-5xl 2xl:text-[56px] text-[#302c2c] font-bold mb-6 leading-tight lg:leading-[56px] 2xl:leading-[68px] tracking-[0.02em]">
+            <div className=" text-center md:text-left  ">
+              <h2
+                className="text-2xl md:text-3xl lg:text-5xl 2xl:text-[56px]
+               text-[#302c2c] font-bold mb-2 md:mb-5 leading-tight lg:leading-[56px] 2xl:leading-[68px] tracking-[0.02em]"
+              >
                 Our Skillful <span className="text-primary">Teacher</span>
               </h2>
-              <p className="text-base md:text-lg lg:text-xl mb-8 text-[#787676] leading-6 md:leading-[30px]">
+              <p className="text-base md:text-lg lg:text-xl mb-2 md:mb-6 text-[#787676] leading-6 md:leading-[30px]">
                 Our kindergarten has an excellent teacher-child ratio so that
                 each child gets the attention he or she needs.
               </p>

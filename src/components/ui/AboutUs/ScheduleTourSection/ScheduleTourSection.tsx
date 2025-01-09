@@ -67,7 +67,7 @@ const ScheduleTourSection = () => {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",  
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
         }
@@ -89,18 +89,17 @@ const ScheduleTourSection = () => {
 
   // Dynamic class options
   const classOptions = [
-    { label: 'Class 1', value: 'Class 1' },
-    { label: 'Class 2', value: 'Class 2' },
-    { label: 'Class 3', value: 'Class 3' },
-    { label: 'Class 4', value: 'Class 4' },
-    { label: 'Class 5', value: 'Class 5' },
+    { label: "Class 1", value: "Class 1" },
+    { label: "Class 2", value: "Class 2" },
+    { label: "Class 3", value: "Class 3" },
+    { label: "Class 4", value: "Class 4" },
+    { label: "Class 5", value: "Class 5" },
   ];
-  
 
   return (
     <div id="admission">
       <MainContainer>
-        <div className="flex flex-col items-center justify-center px-6 py-11 bg-white">
+        <div className="flex flex-col items-center justify-center px-5  py-6 md:py-11 bg-white">
           <h2
             className="text-2xl md:text-3xl lg:text-5xl 2xl:text-[56px] text-[#302c2c] 
               font-bold leading-tight lg:leading-[56px] 2xl:leading-[68px] tracking-[0.02em]"
@@ -136,7 +135,7 @@ const ScheduleTourSection = () => {
                   KidsAge: "",
                 }}
               >
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <FormInputField
                     title="Name"
                     name="name"
@@ -185,21 +184,20 @@ const ScheduleTourSection = () => {
                     placeholder="Enter Kids Age"
                     star={true}
                   />
-                  
                 </div>
-                
+
                 <div className="mt-5">
-                <FormSelectField
-                placeholder="Enter student class"
-                  name="Student_class"
-                  options={classOptions}
-                  defaultValue={0}
+                  <FormSelectField
+                    placeholder="Enter student class"
+                    name="Student_class"
+                    options={classOptions}
+                    defaultValue={0}
                   />
                 </div>
                 {/* <button className="bg-primary bg-[#FF9C00] text-[#fff] px-8 text-base lg:text-lg font-medium py-[5px] rounded-md mt-3">
                   Submit
                 </button> */}
-                <div className="w-[200px]">
+                <div className=" w-full md:w-[200px]">
                   <LoadingButton loading={isPending} buttonName="Submit" />
                 </div>
               </Form>

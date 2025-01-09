@@ -30,7 +30,8 @@ const InfoCard = ({ title, description, link, className, icons }: InfoCardProps)
           />
         ))}
       </div>
-      <h3 className=" text-xl lg:text-[24px] font-bold leading-[31.1px] text-[#302C2C] mb-6">
+      <h3 className=" text-xl lg:text-[24px] font-bold   
+ leading-[31.1px] text-[#302C2C] mb-6">
         {title}
       </h3>
       <p className="text-sm lg:text-base text-[#363636] mb-6">{description}</p>

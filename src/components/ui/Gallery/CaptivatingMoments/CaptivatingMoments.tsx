@@ -17,7 +17,7 @@ const CaptivatingMoments = () => {
             </h2>
             <p
               className="text-base md:text-lg  mb-8 text-[#787676] 
-            md:leading-[30px]"
+            "
             >
               Welcome to Edulife education as an exciting adventure! We
               prioritize holistic nurturing among minds, inspiring inclusivity.
@@ -27,13 +27,13 @@ const CaptivatingMoments = () => {
             {CaptivatinImage.map((src, index) => (
               <div
                 key={index}
-                className={`w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:size-72 relative overflow-hidden mx-auto ${
+                className={`size-36 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:size-72 relative overflow-hidden mx-auto ${
                   index % 9 === 0
-                    ? "rotate-[10deg] md:rotate-4 lg:-rotate-3"
+                    ? "rotate-[20deg] md:rotate-4 lg:-rotate-3"
                     : index % 9 === 1
                     ? "-rotate-[5deg] md:rotate-2 lg:rotate-2"
                     : index % 9 === 2
-                    ? "rotate-[8deg] md:-rotate-2 lg:-rotate-2"
+                    ? "rotate-[25deg] md:-rotate-2 lg:-rotate-2"
                     : index % 9 === 3
                     ? "rotate-[12deg] md:rotate-6 lg:rotate-3"
                     : index % 9 === 4

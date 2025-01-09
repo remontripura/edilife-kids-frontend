@@ -21,7 +21,10 @@ const Footer = () => {
                 <Image src={images.logo} alt="Logo" />
               </Link>
             </div>
-            <p className="text-base  md:text-base mb-8 text-[#787676]  lg:max-w-lg md:leading-[30px]">
+            <p
+              className="text-base  md:text-base md:mb-8 text-[#787676]  lg:max-w-lg 
+            md:leading-[30px]"
+            >
               We have an excellent teacher-to-child ratio at our kindergarten to
               ensure that each child receives the attention he or she needs.
             </p>

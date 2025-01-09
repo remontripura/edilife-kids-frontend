@@ -13,7 +13,13 @@ const Banner = ({ title, firstPoint, secondPoint }: IProps) => {
   return (
     <div className="bg-[#FFF7E5]">
       <MainContainer>
-        <div className="flex flex-col justify-center pt-8 md:pt-4 items-center px-4 md:px-8">
+        <div className="flex  
+        
+ flex-col justify-center pt-8 md:pt-4 
+ 
+ 
+ 
+ items-center px-4 md:px-8">
           <div className="flex justify-between items-center w-full py-2">
             <div className="w-1/6 md:w-[90px] md:first-line:h-[90px] ml-0 mt-2 md:ml-28">
               <Image src={images.dotdot} alt="Dotdot" />

@@ -15,7 +15,6 @@ const GetInformationSection = () => {
   const [selectedBranch, setSelectedBranch] = useState("Khagrachari Branch");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-
   const mapUrls = {
     "Khagrachari Branch":
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428.2716554984911!2d91.9793666120647!3d23.10877176527565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3752e5f392c142c1%3A0x3d99e727c3514ab6!2z4KaP4Kam4KeB4Kay4Ka-4KaH4KarIOCmh-CmnyDgpofgpqjgprjgp43gpp_gpr_gpp_gpr_gpongpp8!5e0!3m2!1sbn!2sbd!4v1727587057194!5m2!1sbn!2sbd",
@@ -58,14 +57,14 @@ const GetInformationSection = () => {
                   message: "",
                 }}
               >
-                <div className="flex justify-between items-baseline">
-                  <h6 className="text-[20px] font-medium flex-1">
+                <div className="flex flex-col md:flex-row gap-3 md:justify-between md:items-baseline">
+                  <h6 className="text-[20px] font-medium md:flex-1">
                     Get Yout Information
                   </h6>
-                  <div className="flex-1">
+                  <div className="md:flex-1 ">
                     <FormSelectField
                       name="adminId"
-                      className="bg-transperant"
+                      className="bg-transperant w-full"
                       options={BranchOption}
                       onChange={handleBranchChange}
                       type="string"
@@ -73,7 +72,7 @@ const GetInformationSection = () => {
                     />
                   </div>
                 </div>
-                <div className="space-y-4 mt-3">
+                <div className="space-y-4  mt-3">
                   <FormInputField
                     title="Name"
                     name="name"
@@ -95,7 +94,7 @@ const GetInformationSection = () => {
                     placeholder="Enter Your Phone Number"
                     star={true}
                   />
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <FormInputField
                       title="Class"
                       name="class"
