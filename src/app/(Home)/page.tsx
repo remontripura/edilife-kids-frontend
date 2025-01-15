@@ -9,11 +9,15 @@ import KidsProgramSection from "@/components/ui/Home/KidsProgramSection/KidsProg
 import VideoSection from "@/components/ui/Home/VideoSection/VideoSection";
 import React from "react";
 import TestimonialSection from "@/components/ui/Home/TestimonialSection/TestimonialSection";
+import { IHeroItems } from "@/types/hero/heroType";
 
-const page = () => {
+const page = async () => {
+    const data = await fetch("http://admin.edulifekids.com/api/hero-section");
+    const heroItems: IHeroItems = await data.json();
+  
   return (
     <div>
-      <HeroSection />
+      <HeroSection heroItem={heroItems} />
       <Carousel />
       <AboutSection />
       <CourseCardsSection />

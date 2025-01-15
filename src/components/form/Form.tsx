@@ -34,11 +34,11 @@ const Form = ({
     formConfig["defaultValues"] = defaultValues;
   }
   const methods = useForm(formConfig);
-  const { handleSubmit, watch, setValue, reset } = methods;
+  const { handleSubmit, watch, setValue } = methods;
 
   const submit: SubmitHandler<FieldValues> = (data) => {
     onSubmit(data);
-    reset()
+ 
   };
 
   useEffect(() => {

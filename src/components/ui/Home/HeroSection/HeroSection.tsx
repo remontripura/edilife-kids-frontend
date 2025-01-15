@@ -2,10 +2,12 @@
 
 import MainContainer from "@/components/shared/Container/MainContainer";
 import { images } from "@/components/store";
+import { IHeroItems } from "@/types/hero/heroType";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const HeroSection = () => {
+const HeroSection = ({heroItem} : {heroItem : IHeroItems}) => {
+  const hero = heroItem.data[0]
   // const scrollToSection = () => {
   //   const element = document.getElementById("admission");
   //   if (element) {
@@ -35,7 +37,7 @@ const HeroSection = () => {
             lg:w-[180px] md:left-48 md:top-16 
              xl:left-80 "
             >
-              <Image src={images.dotdot} alt="" width={140} height={135} />
+              <Image src={hero.image} alt="" width={140} height={135} />
             </div>
             <div
               className="flex flex-col md:absolute items-center 
@@ -81,15 +83,13 @@ const HeroSection = () => {
                 className="font-bold text-2xl md:text-4xl lg:text-5xl  md:leading-[3rem]
              lg:leading-[56px] lg:tracking-[2%] text-[#302C2C] text-center "
               >
-                Inspiring Young Minds in the Heart of Khagrachari
+                {hero.title}
               </h2>
               <p
                 className="text-[16px] 2xl:text-[20px] max-w-lg leading-snug text-[#787676] 
              pt-4 2xl:pt-6"
               >
-                Edulife Kids, by Edulife IT Institute, offers enriching
-                after-school programs for young minds to grow and thrive. Join
-                us today!
+              {hero.description}
               </p>
             </div>
             {/* <Link href="/about"> */}
@@ -112,9 +112,10 @@ const HeroSection = () => {
               />
             </div>
             <Image
-              src={images.snaoedit02}
+              src={hero.image2}
               alt="Snaoedit02"
               width={320}
+              height={147}
               className="w-[200px] h-[215px] lg:w-[220px] lg:h-[230px] xl:w-[350px] xl:h-[360px] "
             />
           </div>
