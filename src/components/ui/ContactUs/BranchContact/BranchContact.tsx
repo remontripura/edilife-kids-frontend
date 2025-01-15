@@ -1,9 +1,7 @@
 import Image from "next/image";
-// import { FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
 
 import { FiClock, FiMail } from "react-icons/fi";
-import { IoLocationOutline } from "react-icons/io5";
 import MainContainer from "@/components/shared/Container/MainContainer";
 import { branches } from "@/components/store";
 import { GrLocation } from "react-icons/gr";
