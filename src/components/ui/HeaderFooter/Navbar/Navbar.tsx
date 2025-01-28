@@ -5,12 +5,13 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import MainContainer from "@/components/shared/Container/MainContainer";
+import { images, menuItems } from "@/components/store";
 import Responsive from "./Responsive";
-import { INavbar, INavItem } from "@/types/navbarType/navbarType";
 
-const Navbar = ({ navItem }: { navItem: INavItem }) => {
+const Navbar = () => {
   const pathname = usePathname();
   const [toggle, setToggle] = useState(false);
+
   const handleToggle = () => {
     setToggle(!toggle);
   };
@@ -24,7 +25,7 @@ const Navbar = ({ navItem }: { navItem: INavItem }) => {
             <Link href="/">
               <Image
                 className="w-[180px]"
-                src={navItem?.data?.logo}
+                src={images.logo}
                 alt="Logo"
                 width={500}
                 height={500}
@@ -33,22 +34,22 @@ const Navbar = ({ navItem }: { navItem: INavItem }) => {
           </div>
           <div className="hidden md:flex">
             <ul className="flex gap-6 items-center">
-              {navItem?.data?.navbar.map((item: INavbar) => (
+              {menuItems.map((item, index) => (
                 <li
-                  key={item.id}
+                  key={index}
                   className={`text-sm md:text-lg font-semibold relative group ${
-                    pathname === item.link ? "text-primary" : "text-black"
+                    pathname === item.pathname ? "text-primary" : "text-black"
                   }`}
                 >
                   <Link
-                    href={item.link}
+                    href={item.pathname}
                     className="transition-colors duration-300"
                   >
-                    {item.name}
+                    {item.item}
                   </Link>
                   <span
                     className={`absolute left-0 bottom-0 w-full h-[2px] bg-black transform ${
-                      pathname === item.link ? "scale-x-100" : "scale-x-0"
+                      pathname === item.pathname ? "scale-x-100" : "scale-x-0"
                     } group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left`}
                   ></span>
                 </li>
@@ -56,7 +57,7 @@ const Navbar = ({ navItem }: { navItem: INavItem }) => {
             </ul>
           </div>
           <Link href="/about#admission">
-            <button className="hero-button">Get Admission</button>
+            <button className="hero-button"> Book free class</button>
           </Link>
         </div>
 

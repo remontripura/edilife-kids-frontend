@@ -6,8 +6,8 @@ import { IHeroItems } from "@/types/hero/heroType";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const HeroSection = ({heroItem} : {heroItem : IHeroItems}) => {
-  const hero = heroItem.data[0]
+const HeroSection = ({ heroItem }: { heroItem: IHeroItems }) => {
+  const hero = heroItem.data[0];
   // const scrollToSection = () => {
   //   const element = document.getElementById("admission");
   //   if (element) {
@@ -89,12 +89,12 @@ const HeroSection = ({heroItem} : {heroItem : IHeroItems}) => {
                 className="text-[16px] 2xl:text-[20px] max-w-lg leading-snug text-[#787676] 
              pt-4 2xl:pt-6"
               >
-              {hero.description}
+                {hero.description}
               </p>
             </div>
             {/* <Link href="/about"> */}
             <button onClick={handleClick} className="hero-button mt-8">
-              Get Admission
+              Book free class
             </button>
             {/* </Link> */}
           </div>

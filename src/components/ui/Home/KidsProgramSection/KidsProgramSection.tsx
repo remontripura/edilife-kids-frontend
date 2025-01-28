@@ -42,11 +42,11 @@ const KidsProgramSection = () => {
                   <Link href="/about#admission">
                     <button
                       className="bg-primary text-[#302C2C] mt-3 md:mt-8 py-2 px-4
-             rounded ease-in-out duration-300
-             text-sm md:text-base font-semibold flex items-center gap-1
-             hover:bg-[#FF8C00]"
+                      rounded ease-in-out duration-300
+                      text-sm md:text-base font-semibold flex items-center gap-1
+                      hover:bg-[#FF8C00]"
                     >
-                      Get Admission <ArrowRight />
+                      Book free class <ArrowRight />
                     </button>
                   </Link>
                 </div>
